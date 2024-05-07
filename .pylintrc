@@ -1,0 +1,10 @@
+[MASTER]
+init-hook='import sys;import os; sys.path.append(os.path.join(os.getcwd(),"app"))'
+max-line-length = 120
+
+[BASIC]
+function-naming-style=snake_case
+
+disable=
+    missing-module-docstring,
+    function-redefined,
