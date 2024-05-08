@@ -30,6 +30,10 @@ class ApiRequests:
             forename = driver.find('{http://ergast.com/mrd/1.5}GivenName').text
             surname = driver.find('{http://ergast.com/mrd/1.5}FamilyName').text
 
+            constructor_object = result.find('{http://ergast.com/mrd/1.5}Constructor')
+            team_name = constructor_object.find('{http://ergast.com/mrd/1.5}Name').text
+
+
             if result.find('{http://ergast.com/mrd/1.5}Time') is None:
                 time = None
             else:
@@ -39,6 +43,7 @@ class ApiRequests:
                 'position': result.attrib['position'],
                 'name': f'{forename} {surname}',
                 'time': time,
+                'team': team_name,
                 'points': result.attrib['points'],
             })
 

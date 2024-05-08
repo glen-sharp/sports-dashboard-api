@@ -8,3 +8,4 @@ function-naming-style=snake_case
 disable=
     missing-module-docstring,
     function-redefined,
+    fixme,

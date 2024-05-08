@@ -21,6 +21,9 @@ class Scrapers:
         name_results = soup.find_all(class_='names standings-coureur--names')
         name_array = [x.text.strip() for x in name_results]
 
+        team_results = soup.find_all(class_='team standings-coureur--names')
+        team_array = [x.text.strip() for x in team_results]
+
         points_results = soup.find_all(class_='pnt')
         points_array = [x.text.strip() for x in points_results]
 
@@ -30,6 +33,7 @@ class Scrapers:
             driver_list.append({
                 'ranking': i + 1,
                 'name': name,
+                'team': team_array[i],
                 'points': int(points_array[i]),
             })
 

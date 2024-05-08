@@ -1,9 +1,13 @@
 from fastapi import FastAPI
 
-from scrapers import Scrapers
-from api_client import ApiRequests
+from .scrapers import Scrapers
+from .api_client import ApiRequests
 
 app = FastAPI()
+
+# TODO: Add unit test
+# TODO: add logging
+# TODO: Integrate with DB
 
 @app.get('/f1_driver_standings')
 async def root():
